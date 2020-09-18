@@ -6,7 +6,7 @@ import "./styles/globalStyles.scss";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App message="Hello world" />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

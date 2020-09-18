@@ -3,6 +3,11 @@
 .header {
   background-color: $secondary;
   padding: 0.4rem 1.25rem;
+
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
 }
 
 .title {

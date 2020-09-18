@@ -1,12 +1,19 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
+import { ImgData } from "../../pages/Home";
 import ClassNames from "../../utils/classNames";
 import classes from "./Card.module.scss";
 
+import logo from "./logo.svg";
+
 interface Props {
   title: string;
-  info: string;
+  info?: string;
   description?: string;
   slider?: boolean;
+  photos?: ImgData[];
 }
 
 const Card: React.FC<Props> = ({
@@ -14,6 +21,7 @@ const Card: React.FC<Props> = ({
   info,
   description,
   slider,
+  photos,
   children,
 }) => {
   return (
@@ -38,7 +46,7 @@ const Card: React.FC<Props> = ({
           )}
           <h2 className={classes.title}>{title}</h2>
         </div>
-        <p className={classes.info}>{info}</p>
+        {info && <p className={classes.info}>{info}</p>}
       </header>
       <div
         className={ClassNames({
@@ -55,14 +63,24 @@ const Card: React.FC<Props> = ({
             {description}
           </p>
         )}
-        {slider && (
+        {slider && photos && (
           <div className={classes.imagesWrapper}>
-            <img src="https://cssbattle.dev/targets/53.png" alt="card-img" />
-            <img src="https://cssbattle.dev/targets/54.png" alt="card-img" />
-            <img src="https://cssbattle.dev/targets/55.png" alt="card-img" />
-            <img src="https://cssbattle.dev/targets/56.png" alt="card-img" />
-            <img src="https://cssbattle.dev/targets/57.png" alt="card-img" />
-            <img src="https://cssbattle.dev/targets/58.png" alt="card-img" />
+            {photos.map((item, index) => (
+              <a
+                className={classes.imageLink}
+                href={item.pageURL}
+                target="__blank"
+                key={item.pageURL}
+              >
+                <LazyLoadImage
+                  src={item.largeImageURL}
+                  alt={item.user}
+                  effect="blur"
+                  placeholderSrc={logo}
+                />
+                <p className={classes.badge}>{item.user}</p>
+              </a>
+            ))}
           </div>
         )}
       </div>
