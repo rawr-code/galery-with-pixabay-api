@@ -1,0 +1,116 @@
+@import "../../styles/colorpalette.scss";
+
+.card {
+  background-color: $card;
+  color: $textSecondary;
+  margin: 0 0 2rem;
+  border-radius: 10px;
+}
+
+.slider {
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  padding: 0;
+  overflow-x: hidden;
+  border: 1px solid $border;
+}
+
+.padding {
+  padding: 1rem;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  color: $textPrimary;
+}
+
+.dark {
+  position: sticky;
+  padding: 1rem 2rem;
+  background-color: $dark;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding-left: 1rem;
+  display: inline-block;
+}
+
+.info {
+  margin-left: 1rem;
+}
+
+.description {
+  flex: 1 0;
+  padding-left: 1rem;
+  line-height: 1.6;
+  margin: 1rem 0 0.75rem;
+  border-top: 1px solid $border;
+  padding-top: 1.5rem;
+  color: $textSecondary;
+}
+
+.slideInfo {
+  border-right: 1px solid $border;
+  position: sticky;
+  left: 0;
+  background-color: $card;
+  z-index: 1;
+  padding: 2rem;
+  margin-right: 0;
+  width: auto;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 300px;
+}
+
+.imagesWrapper {
+  white-space: nowrap;
+  padding: 2rem 2rem 2rem 0;
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: calc(50% - 2rem);
+
+  & img {
+    position: relative;
+    display: inline-block;
+    margin: 0 0.75rem;
+    margin-left: 2rem;
+    height: 220px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    vertical-align: middle;
+    max-height: 100%;
+    border-radius: 5px;
+  }
+}
+
+.contentWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+}
+
+.circleWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.circle {
+  background-color: $red;
+  border-radius: 50%;
+  padding: 0;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  white-space: nowrap;
+  position: relative;
+  margin: 0;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,35 @@
+@import "./colorpalette.scss";
+
+* {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: $primary;
+  color: $textPrimary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsla(0, 0%, 100%, 0.2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}

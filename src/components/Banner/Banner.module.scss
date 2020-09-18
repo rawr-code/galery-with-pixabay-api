@@ -1,0 +1,21 @@
+@import "../../styles/colorpalette.scss";
+
+.banner {
+  background-color: $primary;
+  padding: 2rem;
+  color: $textPrimary;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 1.125rem;
+  max-width: 60%;
+  line-height: 1.5;
+  margin: 0 auto 2rem;
+}

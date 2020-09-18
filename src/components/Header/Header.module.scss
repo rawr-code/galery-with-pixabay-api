@@ -1,0 +1,13 @@
+@import "../../styles/colorpalette.scss";
+
+.header {
+  background-color: $secondary;
+  padding: 0.4rem 1.25rem;
+}
+
+.title {
+  margin: 0;
+  color: $textPrimary;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
