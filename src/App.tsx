@@ -1,6 +1,11 @@
 import React from "react";
-import logo from "./logo.svg";
+import { BrowserRouter, Route } from "react-router-dom";
 import "./App.css";
+import CardContainer from "./components/CardContainer/CardContainer";
+import ProtectedRoute from "./components/ProtectedRoute";
+import { ImgurProvider } from "./context/Imgur/ImgurContext";
+import { Login } from "./pages/Login/Login";
+import LoginCallback from "./pages/LoginCallback";
 
 interface Props {
   message: string;
@@ -8,22 +13,13 @@ interface Props {
 
 const App: React.FC<Props> = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {props.message}
-        </a>
-      </header>
-    </div>
+    <ImgurProvider>
+      <BrowserRouter>
+        <Route path="/" exact component={Login} />
+        <Route path="/login" exact component={LoginCallback} />
+        <ProtectedRoute path="/card" exact component={CardContainer} />
+      </BrowserRouter>
+    </ImgurProvider>
   );
 };
 
