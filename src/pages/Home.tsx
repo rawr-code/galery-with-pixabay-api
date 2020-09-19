@@ -83,9 +83,9 @@ const Home = () => {
     <>
       <Banner
         title="Welcome to my Galery with Pixabay!"
-        description="CSS code-golfing is here! Use your CSS skills to replicate targets with smallest possible code. Feel free to check out the targets below and put your CSS skills to test."
+        description="Get the photos you need thanks to the Pixabay API."
       />
-      <Header title="Gallery" />
+      <Header title="Search in the Pixabay Gallery" />
       <FormSearch
         value={query}
         handleOnChange={handleOnChange}
@@ -93,8 +93,8 @@ const Home = () => {
       />
       <Wrapper>
         <Card
-          title="Introducing Custom Battles"
-          description="Hosting a conference, meetup, company engineering event or just want to have some nerd fun? Create your own battles with custom targets, leaderboards, and duration! Read more about Custom Battles"
+          title="How to use?"
+          description='Separate with "," each search. You can query multiple at the same time. Example: "dogs, yellow rose, car red" 🎉'
         />
         {searchResulst.map((item, index) => (
           <Card key={index} slider title={item.title} photos={item.photos} />
