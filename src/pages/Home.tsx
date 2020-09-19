@@ -73,6 +73,7 @@ const Home = () => {
 
   useEffect(() => {
     handleGetImages();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
